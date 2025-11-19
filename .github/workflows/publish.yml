@@ -45,6 +45,9 @@ jobs:
         run: npm install
       - name: Run Build Script
         run: npm run build
+        env:
+          VITE_CLIENT_ID: ${{ secrets.VITE_CLIENT_ID }}
+          VITE_CLIENT_SECRET: ${{ secrets.VITE_CLIENT_SECRET }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
